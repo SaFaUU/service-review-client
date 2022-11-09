@@ -4,6 +4,14 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = (event) => {
+        event.preventDefault();
+        logOut()
+            .then(() => {
+
+            })
+            .catch(err => console.log(err));
+    }
     return (
         <div className="navbar bg-base-100 px-8 mx-auto">
             <div className="navbar-start">
@@ -57,7 +65,7 @@ const Header = () => {
                                     </Link>
                                 </li>
                                 <li><Link>Settings</Link></li>
-                                <li><Link>Logout</Link></li>
+                                <li><Link onClick={handleLogOut}>Logout</Link></li>
                             </ul>
                         </div>
                         :

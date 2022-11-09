@@ -3,7 +3,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { googleSignIn } = useContext(AuthContext)
+    const { googleSignIn, logOut } = useContext(AuthContext)
     const handleGoogleLogin = (event) => {
         event.preventDefault();
         googleSignIn()
@@ -15,6 +15,8 @@ const Login = () => {
                 console.log(error);
             });
     }
+
+
     return (
         <div>
             <div className="hero my-36">
@@ -39,7 +41,7 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-3">
                                 <button className="btn btn-primary bg-blue-500 hover:bg-blue-700 border-none text-white">Login</button>
-                                <button onSubmit={handleGoogleLogin} className="btn btn-outline mt-3">Login with Google
+                                <button onClick={handleGoogleLogin} className="btn btn-outline mt-3">Login with Google
                                     <FaGoogle className='ml-1'></FaGoogle>
                                 </button>
                             </div>
