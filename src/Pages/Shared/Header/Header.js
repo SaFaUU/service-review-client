@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
     return (
         <div className="navbar bg-base-100 px-8 mx-auto">
             <div className="navbar-start">
@@ -34,32 +36,38 @@ const Header = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/tours'>Tours</Link></li>
                     <li><Link to='/blogs'>Blogs</Link></li>
-                    <li><Link to='/myreview'>My Reviews</Link></li>
+                    <li><Link to='/myreviews'>My Reviews</Link></li>
                     <li><Link to='/addtour'>Add Tour</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">
-                {/* <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src="https://placeimg.com/80/80/people" />
+                {
+                    user?.uid ?
+                        <div className="dropdown dropdown-end">
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src={user.photoURL} />
+                                </div>
+                            </label>
+                            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                <li>
+                                    <Link className="justify-between">
+                                        Profile
+                                        <span className="badge">New</span>
+                                    </Link>
+                                </li>
+                                <li><Link>Settings</Link></li>
+                                <li><Link>Logout</Link></li>
+                            </ul>
                         </div>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li>
-                            <a className="justify-between">
-                                Profile
-                                <span className="badge">New</span>
-                            </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
-                </div> */}
-                <ul className="menu menu-horizontal p-0">
-                    <li><Link to='/login'>Login</Link></li>
-                    <li><Link to='/register'>Register</Link></li>
-                </ul>
+                        :
+                        <ul className="menu menu-horizontal p-0">
+                            <li><Link to='/login'>Login</Link></li>
+                            <li><Link to='/register'>Register</Link></li>
+                        </ul>
+                }
+
+
             </div>
         </div>
     );
