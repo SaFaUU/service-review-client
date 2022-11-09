@@ -8,7 +8,7 @@ import Blogs from "../../Pages/Blogs/Blogs";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
-import Services from "../../Pages/Services/Services";
+import AllTours from "../../Pages/AllTours/AllTours";
 
 export const router = createBrowserRouter([
     {
@@ -20,8 +20,8 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: "/services",
-                element: <Services></Services>
+                path: "/tours",
+                element: <AllTours></AllTours>
             },
             {
                 path: "/blogs",
