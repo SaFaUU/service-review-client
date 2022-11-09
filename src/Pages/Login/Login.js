@@ -3,7 +3,8 @@ import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { googleSignIn, logOut } = useContext(AuthContext)
+    const { googleSignIn } = useContext(AuthContext)
+
     const handleGoogleLogin = (event) => {
         event.preventDefault();
         googleSignIn()
