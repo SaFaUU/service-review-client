@@ -5,7 +5,7 @@ const HomeTour = () => {
         <div>
             <h2 className='my-6 font-bold text-2xl'>Check Our Available Tour Services</h2>
             <div className='w-3/4 mx-auto flex flex-col  lg:flex-row mt-10 justify-around items-center'>
-                <div className="card w-80 bg-base-100 shadow-xl">
+                <div className="card lg:w-3/12 bg-base-100 shadow-xl sm:mt-5">
                     <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title mx-auto">Shoes!</h2>
@@ -15,7 +15,7 @@ const HomeTour = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card w-80 bg-base-100 shadow-xl">
+                <div className="card lg:w-3/12 bg-base-100 shadow-xl sm:mt-5">
                     <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title mx-auto">Shoes!</h2>
@@ -25,7 +25,7 @@ const HomeTour = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card w-80 bg-base-100 shadow-xl">
+                <div className="card lg:w-3/12 bg-base-100 shadow-xl sm:mt-5">
                     <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title mx-auto">Shoes!</h2>
