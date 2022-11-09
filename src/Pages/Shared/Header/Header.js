@@ -37,7 +37,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="dropdown dropdown-end">
+                {/* <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img src="https://placeimg.com/80/80/people" />
@@ -53,7 +53,11 @@ const Header = () => {
                         <li><a>Settings</a></li>
                         <li><a>Logout</a></li>
                     </ul>
-                </div>
+                </div> */}
+                <ul className="menu menu-horizontal p-0">
+                    <li><Link to='/login'>Login</Link></li>
+                    <li><Link to='/register'>Register</Link></li>
+                </ul>
             </div>
         </div>
     );
