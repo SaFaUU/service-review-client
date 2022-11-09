@@ -44,8 +44,14 @@ const Header = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/tours'>Tours</Link></li>
                     <li><Link to='/blogs'>Blogs</Link></li>
-                    <li><Link to='/myreviews'>My Reviews</Link></li>
-                    <li><Link to='/addtour'>Add Tour</Link></li>
+                    {
+                        user?.uid &&
+                        <>
+                            <li><Link to='/myreviews'>My Reviews</Link></li>
+                            <li><Link to='/addtour'>Add Tour</Link></li>
+                        </>
+                    }
+
                 </ul>
             </div>
             <div className="navbar-end">

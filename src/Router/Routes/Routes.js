@@ -11,6 +11,7 @@ import Register from "../../Pages/Register/Register";
 import AllTours from "../../Pages/AllTours/AllTours";
 import AddTour from "../../Pages/AddTour/AddTour";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -39,11 +40,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/addtour",
-                element: <AddTour></AddTour>
+                element: <PrivateRoute><AddTour></AddTour></PrivateRoute>
             },
             {
                 path: "/myreviews",
-                element: <MyReviews></MyReviews>
+                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             },
         ]
 
