@@ -13,10 +13,10 @@ const AllTours = () => {
                 {
                     services?.map(service => {
                         return (
-                            <div className="card card-side bg-base-100 shadow-xl w-2/3 mx-auto my-10 hover:scale-110 duration-300 ease-in-out" key={service._id}>
+                            <div className="card lg:card-side  bg-base-100 shadow-xl w-2/3 mx-auto my-10 hover:scale-110 duration-300 ease-in-out" key={service._id}>
                                 <PhotoProvider>
                                     <PhotoView src={service.img_url}>
-                                        <img src={service.img_url} alt="" className='w-2/5' />
+                                        <img src={service.img_url} alt="" className='lg:w-2/5' />
                                     </PhotoView>
                                 </PhotoProvider>
                                 <div className="card-body">
