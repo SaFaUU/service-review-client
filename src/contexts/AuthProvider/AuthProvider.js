@@ -24,6 +24,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const logOut = () => {
+        localStorage.clear();
         setLoading(true);
         return signOut(auth)
     }

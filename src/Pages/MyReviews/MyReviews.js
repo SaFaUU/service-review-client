@@ -4,21 +4,29 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
 const MyReviews = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`https://service-review-server-nu.vercel.app/myreviews/${user.uid}`, {
+        fetch(`https://service-review-server-nu.vercel.app/myreviews/${user?.uid}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401) {
+                    localStorage.clear();
+                    window.location.reload();
+                    return logOut();
+                }
+                return res.json()
+
+            })
             .then(data => {
                 console.log(data)
                 setReviews(data)
             })
-    }, [])
+    }, [user?.uid])
 
     const handleDelete = (id) => {
         console.log(id)
