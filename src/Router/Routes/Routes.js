@@ -9,9 +9,10 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 import AllTours from "../../Pages/AllTours/AllTours";
-import AddTour from "../../Pages/AddTour/AddTour";
+import AddTour from "../../Pages/AddService/AddService";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AddService from "../../Pages/AddService/AddService";
 
 export const router = createBrowserRouter([
     {
@@ -20,11 +21,13 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch("http://localhost:5000/")
             },
             {
                 path: "/tours",
-                element: <AllTours></AllTours>
+                element: <AllTours></AllTours>,
+                loader: () => fetch("http://localhost:5000/alltours")
             },
             {
                 path: "/blogs",
@@ -39,8 +42,8 @@ export const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: "/addtour",
-                element: <PrivateRoute><AddTour></AddTour></PrivateRoute>
+                path: "/addservice",
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>
             },
             {
                 path: "/myreviews",

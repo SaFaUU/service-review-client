@@ -36,7 +36,7 @@ const Header = () => {
                 </div>
                 <Link className="btn btn-ghost normal-case text-xl align-middle flex">
                     <img className='w-9' src="http://www.tourtoday.com.bd/shop/wp-content/uploads/2018/05/TourTodayBD.png" alt="" />
-                    <p className='ml-3 font-bold text-slate-600'>TOURTODAY</p>
+                    <p className='ml-3 font-bold text-slate-600'>SAFATOURS</p>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -48,7 +48,7 @@ const Header = () => {
                         user?.uid &&
                         <>
                             <li><Link to='/myreviews'>My Reviews</Link></li>
-                            <li><Link to='/addtour'>Add Tour</Link></li>
+                            <li><Link to='/addservice'>Add Service</Link></li>
                         </>
                     }
 

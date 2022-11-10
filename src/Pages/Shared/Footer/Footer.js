@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className="footer p-14 bg-base-200 text-base-content">
             <div className='flex flex-col items-center'>
                 <img src="http://www.tourtoday.com.bd/shop/wp-content/uploads/2018/05/TourTodayBD.png" alt="" className='w-20' />
-                <p>Tour Today Industries Ltd.<br />Providing reliable tour services since 1992</p>
+                <p>Safa Tours<br />Providing reliable tour services since 1992</p>
             </div>
             <div>
                 <span className="footer-title">Services</span>
