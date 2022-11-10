@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 
 const ServiceReview = ({ id, serviceName, serviceImg }) => {
     const { user } = useContext(AuthContext)
@@ -60,9 +61,16 @@ const ServiceReview = ({ id, serviceName, serviceImg }) => {
             <h2 className='my-6 font-bold text-2xl'>Please Write a Review</h2>
             <div className='flex mb-10 px-10 items-center'>
                 <div className="avatar online  lg:block hidden">
-                    <div className="lg:w-24 w-full rounded-full">
-                        <img src={user?.photoURL} alt='' />
-                    </div>
+                    {
+                        user?.photoURL ?
+                            <div className="lg:w-24 w-full rounded-full">
+
+                                <img src={user?.photoURL} alt='' />
+                            </div>
+                            :
+                            <FaUser className='text-5xl'></FaUser>
+                    }
+
                 </div>
                 <form onSubmit={handleReviewSubmit} className='w-full'>
                     <div className="lg:ml-10">
