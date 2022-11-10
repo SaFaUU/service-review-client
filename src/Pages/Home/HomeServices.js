@@ -33,7 +33,7 @@ const HomeServices = ({ services }) => {
                                         </span>
                                     </div>
                                     <div className="card-actions justify-end">
-                                        <Link to={`/service/${service._id}`} className="btn btn-primary w-full text-white font-bold mt-5 bg-blue-500 hover:bg-blue-700 border-none">View Package</Link>
+                                        <Link to={`/services/${service._id}`} className="btn btn-primary w-full text-white font-bold mt-5 bg-blue-500 hover:bg-blue-700 border-none">View Package</Link>
                                     </div>
                                 </div>
                             </div>
@@ -41,8 +41,8 @@ const HomeServices = ({ services }) => {
                     })
                 }
             </div>
-            <Link className='btn btn-ghost bg-blue-500 hover:bg-blue-700 text-white mt-10' to='/tours'>See All Tours</Link>
-        </div >
+            <Link className='btn btn-ghost bg-blue-500 hover:bg-blue-700 text-white mt-10' to='/services'>See All Tours</Link>
+        </div>
     );
 };
 

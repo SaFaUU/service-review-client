@@ -22,7 +22,7 @@ const AllTours = () => {
                                     <p className='text-left text-sm'>{service.info}</p>
                                     <div className="card-actions justify-start">
                                         <button className="btn btn-primary w-1/3 text-white font-bold mt-5 bg-red-500 hover:bg-red-700 border-none">{service.price}BDT</button>
-                                        <Link to={`/service/${service._id}`} className="btn btn-primary w-1/3 text-white font-bold mt-5 bg-blue-500 hover:bg-blue-700 border-none">View Package</Link>
+                                        <Link to={`/services/${service._id}`} className="btn btn-primary w-1/3 text-white font-bold mt-5 bg-blue-500 hover:bg-blue-700 border-none">View Package</Link>
                                     </div>
                                 </div>
 
