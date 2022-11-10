@@ -12,7 +12,7 @@ const HomeServices = ({ services }) => {
                 {
                     services.map(service => {
                         return (
-                            <div className="card lg:w-80 bg-base-100 shadow-xl sm:mt-5 hover:scale-110 duration-300 ease-in-out">
+                            <div className="card lg:w-80 bg-base-100 shadow-xl sm:mt-5 hover:scale-110 duration-300 ease-in-out" key={service._id}>
                                 <figure>
                                     <PhotoProvider>
                                         <PhotoView src={service.img_url}>

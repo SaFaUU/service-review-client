@@ -1,17 +1,33 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext)
-    const loadedReviews = useLoaderData()
-    const [reviews, setReviews] = useState(loadedReviews);
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://service-review-server-nu.vercel.app/myreviews/${user.uid}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setReviews(data)
+            })
+    }, [])
 
     const handleDelete = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/myreviews/${id}`, {
+        fetch(`https://service-review-server-nu.vercel.app/myreviews/${id}`, {
             method: 'DELETE',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+
         })
             .then(res => res.json())
             .then(data => {
@@ -32,10 +48,11 @@ const MyReviews = () => {
             info
         }
         console.log(id)
-        fetch(`http://localhost:5000/myreviews/${id}`, {
+        fetch(`https://service-review-server-nu.vercel.app/myreviews/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(updatedReview),
         })

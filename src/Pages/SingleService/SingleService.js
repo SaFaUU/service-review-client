@@ -18,9 +18,9 @@ const SingleService = () => {
                     <h2 className="card-title">{serviceData.title}</h2>
                     <p className='text-left'>{serviceData.info}</p>
                     <div className="card-actions justify-around flex-nowrap">
-                        <button className="btn btn-primary text-white font-bold mt-5 bg-red-500 hover:bg-red-700 border-none w-2/6">{serviceData.price}BDT</button>
-                        <Link to={`/services/${serviceData._id}`} className="btn btn-primary text-white font-bold mt-5 bg-blue-500 hover:bg-blue-700 border-none w-2/6">View Package</Link>
-                        <Link to={`/services/${serviceData._id}`} className="btn btn-primary text-white font-bold bg-blue-500 hover:bg-blue-700 border-none mt-5 w-2/6">View Package</Link>
+                        <button className="btn btn-primary text-white font-bold mt-5 bg-red-500 hover:bg-red-700 border-none w-full">{serviceData.price}BDT</button>
+                        {/* <Link to={`/services/${serviceData._id}`} className="btn btn-primary text-white font-bold mt-5 bg-blue-500 hover:bg-blue-700 border-none w-2/6">View Package</Link>
+                        <Link to={`/services/${serviceData._id}`} className="btn btn-primary text-white font-bold bg-blue-500 hover:bg-blue-700 border-none mt-5 w-2/6">View Package</Link> */}
                     </div>
                 </div>
             </div>

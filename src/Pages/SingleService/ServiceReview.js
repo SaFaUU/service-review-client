@@ -6,7 +6,7 @@ const ServiceReview = ({ id, serviceName, serviceImg }) => {
     const [reviews, setReview] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/review/${id}`)
+        fetch(`https://service-review-server-nu.vercel.app/review/${id}`)
             .then(result => result.json())
             .then(data => {
                 // console.log(data)
@@ -32,10 +32,12 @@ const ServiceReview = ({ id, serviceName, serviceImg }) => {
             name,
             photoURL,
             reviewName,
-            serviceImage
+            serviceImage,
+            timestamp: Date.now(),
+
         }
 
-        fetch("http://localhost:5000/addreview", {
+        fetch("https://service-review-server-nu.vercel.app/addreview", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -45,7 +47,7 @@ const ServiceReview = ({ id, serviceName, serviceImg }) => {
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
-                const newReview = [...reviews, reviewData]
+                const newReview = [reviewData, ...reviews]
                 // console.log('inside fetch post')
                 // console.log(newReview)
                 setReview(newReview)

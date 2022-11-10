@@ -19,7 +19,7 @@ const AddService = () => {
             img_url,
         }
 
-        fetch("http://localhost:5000/addservice", {
+        fetch("https://service-review-server-nu.vercel.app/addservice", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -30,6 +30,7 @@ const AddService = () => {
             .then(data => {
                 console.log(data)
                 navigate("/")
+                event.target.reset();
             });
     }
     return (
@@ -69,7 +70,7 @@ const AddService = () => {
                                     <input name='price' type="text" placeholder="Price" className="input input-bordered" />
                                 </div>
                                 <div className="form-control mt-3 mb-10">
-                                    <button type='submit' className="btn btn-primary bg-blue-500 hover:bg-blue-700 border-none text-white">Add Tour</button>
+                                    <button type='submit' className="btn btn-primary bg-blue-500 hover:bg-blue-700 border-none text-white">Add Service</button>
                                 </div>
                             </div>
                         </form>
