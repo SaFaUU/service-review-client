@@ -2,9 +2,12 @@ import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
+
 
 const Login = () => {
     const { googleSignIn, logIn } = useContext(AuthContext)
+    useTitle('Login')
     const navigate = useNavigate()
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/'
@@ -22,7 +25,7 @@ const Login = () => {
                     email: user.email,
                 }
                 //get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://service-review-server-safauu.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

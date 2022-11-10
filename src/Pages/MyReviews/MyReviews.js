@@ -2,13 +2,17 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { FaEdit, FaTrash } from 'react-icons/fa';
+import useTitle from '../../hooks/useTitle';
 
 const MyReviews = () => {
     const { user, logOut } = useContext(AuthContext)
     const [reviews, setReviews] = useState([]);
 
+
+    useTitle('My Reviews');
+
     useEffect(() => {
-        fetch(`https://service-review-server-nu.vercel.app/myreviews/${user?.uid}`, {
+        fetch(`https://service-review-server-safauu.vercel.app/myreviews/${user?.uid}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -30,7 +34,7 @@ const MyReviews = () => {
 
     const handleDelete = (id) => {
         console.log(id)
-        fetch(`https://service-review-server-nu.vercel.app/myreviews/${id}`, {
+        fetch(`https://service-review-server-safauu.vercel.app/myreviews/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
@@ -56,7 +60,7 @@ const MyReviews = () => {
             info
         }
         console.log(id)
-        fetch(`https://service-review-server-nu.vercel.app/myreviews/${id}`, {
+        fetch(`https://service-review-server-safauu.vercel.app/myreviews/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

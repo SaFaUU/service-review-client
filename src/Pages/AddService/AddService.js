@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const AddService = () => {
     const navigate = useNavigate();
 
+    useTitle('Add Service')
     const handleServiceSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -19,7 +21,7 @@ const AddService = () => {
             img_url,
         }
 
-        fetch("https://service-review-server-nu.vercel.app/addservice", {
+        fetch("https://service-review-server-safauu.vercel.app/addservice", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

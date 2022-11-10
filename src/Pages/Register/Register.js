@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
     const { createUser, updateUserProfile, googleSignIn } = useContext(AuthContext)
 
+    useTitle('Register')
     const handleUpdateUserProfile = (name, photoURL) => {
         const profile = {
             displayName: name,

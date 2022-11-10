@@ -2,9 +2,11 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../hooks/useTitle';
 
 const AllTours = () => {
     const services = useLoaderData()
+    useTitle('All Services')
     return (
         <div>
             <div className='w-3/4 mx-auto flex flex-col  lg:flex-col mt-10 justify-around items-center mb-10'>

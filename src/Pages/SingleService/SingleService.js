@@ -3,9 +3,11 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import ServiceReview from './ServiceReview';
+import useTitle from '../../hooks/useTitle';
 
 const SingleService = () => {
     const serviceData = useLoaderData()
+    useTitle('Service Details')
     return (
         <div>
             <div className="card card-compact w-1/2 bg-base-100 shadow-md mx-auto my-10">
