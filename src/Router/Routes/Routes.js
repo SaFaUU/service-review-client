@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
                 loader: () => fetch("http://localhost:5000/")
             },
             {
-                path: "/tours",
+                path: "/services",
                 element: <AllTours></AllTours>,
                 loader: () => fetch("http://localhost:5000/alltours")
             },

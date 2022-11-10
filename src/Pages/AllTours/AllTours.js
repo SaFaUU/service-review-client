@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const AllTours = () => {
     const services = useLoaderData()
@@ -10,7 +12,11 @@ const AllTours = () => {
                     services?.map(service => {
                         return (
                             <div className="card card-side bg-base-100 shadow-xl w-2/3 mx-auto my-10 hover:scale-110 duration-300 ease-in-out">
-                                <img src={service.img_url} alt="Question Related" className='w-1/3' />
+                                <PhotoProvider>
+                                    <PhotoView src={service.img_url}>
+                                        <img src={service.img_url} alt="" className='w-1/3' />
+                                    </PhotoView>
+                                </PhotoProvider>
                                 <div className="card-body">
                                     <h2 className="card-title font-bold text-left">{service.title}</h2>
                                     <p className='text-left text-sm'>{service.info}</p>

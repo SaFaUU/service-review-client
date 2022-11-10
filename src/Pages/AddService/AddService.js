@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AddService = () => {
+    const navigate = useNavigate();
+
     const handleServiceSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -24,7 +27,10 @@ const AddService = () => {
             body: JSON.stringify(serviceData)
         })
             .then(res => res.json())
-            .then(data => console.log(data));
+            .then(data => {
+                console.log(data)
+                navigate("/")
+            });
     }
     return (
         <div>
@@ -34,7 +40,7 @@ const AddService = () => {
                         <h1 className="text-5xl font-bold">Add a Service now!</h1>
                         <p className="pt-6 ">Please insert Service Details to add</p>
                     </div>
-                    <div className="card w-80 shadow-2xl bg-base-100">
+                    <div className="card w-96 shadow-2xl bg-base-100">
                         <form onSubmit={handleServiceSubmit}>
                             <div className="card-body pb-0">
                                 <div className="form-control">
