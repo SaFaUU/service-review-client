@@ -4,7 +4,7 @@ const TopDestinations = () => {
     return (
         <div className='p-8'>
             <h2 className='my-6 font-bold text-2xl'>Top destinations</h2>
-            <div className='grid lg:grid-cols-6 grid-cols-1 w-3/5 mx-auto gap-10'>
+            <div className='grid lg:grid-cols-6 grid-cols-1 w-3/5 mx-auto gap-32'>
                 <div className='flex flex-col items-center'>
                     <div className="avatar">
                         <div className="w-32 rounded-full">

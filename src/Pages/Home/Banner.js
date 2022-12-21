@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <div className="hero h-2/3" style={{ backgroundImage: `url("https://upload.wikimedia.org/wikipedia/commons/f/f1/Saint_Martins_Island_%28Bangladesh%29_banner_Beach_with_boats.jpg")` }}>
+        <div className="hero h-96" style={{ backgroundImage: `url("https://upload.wikimedia.org/wikipedia/commons/f/f1/Saint_Martins_Island_%28Bangladesh%29_banner_Beach_with_boats.jpg")` }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="w-auto pt-9 pb-6">

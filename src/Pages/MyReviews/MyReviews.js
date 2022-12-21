@@ -5,7 +5,7 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 import useTitle from '../../hooks/useTitle';
 
 const MyReviews = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { user, loading, logOut } = useContext(AuthContext)
     const [reviews, setReviews] = useState([]);
 
 
@@ -20,7 +20,7 @@ const MyReviews = () => {
             .then(res => {
                 if (res.status === 401) {
                     localStorage.clear();
-                    window.location.reload();
+                    // window.location.reload();
                     return logOut();
                 }
                 return res.json()
@@ -30,7 +30,7 @@ const MyReviews = () => {
                 console.log(data)
                 setReviews(data)
             })
-    }, [user?.uid])
+    }, [user?.uid, logOut])
 
     const handleDelete = (id) => {
         console.log(id)
@@ -76,9 +76,16 @@ const MyReviews = () => {
             })
 
     }
+    if (loading) {
+        return <h2>Loading ...</h2>
+    }
+
 
     return (
-        <div>
+        <div className='my-44'>
+            {
+                reviews?.length === 0 && <h1 className=' text-2xl'>No Reivew has been added</h1>
+            }
             {
                 reviews?.map(review => {
                     return (
